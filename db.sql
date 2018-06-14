@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS rooms (
 	view VARCHAR(50),
 	is_suite BOOL NOT NULL,
 	price DECIMAL(10,2),
+	reduced_mobility_access BOOL NOT  NULL,
+	area INT UNSIGNED NOT NULL,
 	UNIQUE INDEX (name),
 	INDEX (bed_type_id),
 	INDEX (bathroom_type_id)
@@ -36,11 +38,15 @@ CREATE TABLE IF NOT EXISTS customers (
 	UNIQUE INDEX (email)
 ) Engine=InnoDB CHARSET=UTF8;
 
+-- Each booking references a customer and a room.
+-- Bookings have a status code
 CREATE TABLE IF NOT EXISTS bookings (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	customer_id INT UNSIGNED NOT NULL,
 	room_id INT UNSIGNED NOT NULL,
 	status_id INT UNSIGNED NOT NULL,
+	arrival_date DATE NOT NULL,
+	departure_date DATE NOT NULL,
 	INDEX (customer_id),
 	INDEX (room_id),
 	INDEX (status_id)
@@ -66,12 +72,14 @@ CREATE TABLE IF NOT EXISTS service_categories (
 	UNIQUE INDEX (name)
 ) Engine=InnoDB CHARSET=UTF8;
 
+-- List the services that are availble for each room
 CREATE TABLE IF NOT EXISTS room_services (
 	room_id INT UNSIGNED NOT NULL,
 	service_id INT UNSIGNED NOT NULL,
 	CONSTRAINT PRIMARY KEY (room_id, service_id)
 ) Engine=InnoDB CHARSET=UTF8;
 
+-- Services can be added to each booking
 CREATE TABLE IF NOT EXISTS booking_services (
 	id INT UNSIGNED NOT NULL PRIMARY KEY,
 	service_id INT UNSIGNED NOT NULL,
@@ -96,7 +104,7 @@ ALTER TABLE services
 
 ALTER TABLE room_services
 	ADD CONSTRAINT FOREIGN KEY (room_id) REFERENCES rooms(id),
-	ADD CONSTRAINT FOREIGN KEY (service_id) REFERENCES service_categories(id);
+	ADD CONSTRAINT FOREIGN KEY (service_id) REFERENCES services(id);
 
 ALTER TABLE booking_services
 	ADD CONSTRAINT FOREIGN KEY (service_id) REFERENCES services(id),
