@@ -5,8 +5,9 @@ Compétences concernées :
 - Développer des pages web en lien avec une base de données
 
 ## Objectifs
-- Maquetter l'application avec les pages suivantes:
+- Créer l'application avec les pages suivantes:
 	- une page « liste des chambres »
+	Afficher le nom de chaque chambre, ainsi que l'accessibilité pour PMR
   Chaque élément de la liste est cliquable et ouvre la page « chambre »
 	- une page « chambre » qui affiche tous les détails de la chambre et
 	qui contient un bouton « réservation »
@@ -16,6 +17,9 @@ Compétences concernées :
 - Créer les pages selon les maquettes
 - Développer des tests unitaires
 - Suivre le design pattern MVC, et bien séparer les trois types de modules
+- Ajouter des tests unitaires pour tester :
+	- L'unicité des noms des chambres
+	- La disponibilité des services par chambre
 
 ## Resources
 - La base de données est fournie (voire repository)
