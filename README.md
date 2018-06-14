@@ -15,6 +15,7 @@ Compétences concernées :
 - Créer les composants d'accès aux données
 - Créer les pages selon les maquettes
 - Développer des tests unitaires
+- Suivre le design pattern MVC, et bien séparer les trois types de modules
 
 ## Resources
 - La base de données est fournie (voire repository)
