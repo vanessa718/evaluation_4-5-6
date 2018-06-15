@@ -13,6 +13,7 @@ Compétences concernées :
 		- le prix par nuit
 		- l'accessiblité aux PMR
 		- le type de lit
+
 	Chaque chambre de la liste est cliquable et renvoie vers la page « chambre »
 	correspondante.
 	- une page « chambre » qui affiche tous les détails de la chambre et
