@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS rooms (
 	name VARCHAR(50) NOT NULL,
 	bed_type_id INT UNSIGNED NOT NULL,
 	bathroom_type_id INT UNSIGNED NOT NULL,
-	view VARCHAR(50),
+	view_id INT UNSIGNED NOT NULL,
 	is_suite BOOL NOT NULL,
 	price DECIMAL(10,2),
 	reduced_mobility_access BOOL NOT  NULL,
@@ -23,6 +23,12 @@ CREATE TABLE IF NOT EXISTS bathroom_types (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	bathroom_type VARCHAR(50) NOT NULL,
 	UNIQUE INDEX (bathroom_type)
+) Engine=InnoDB CHARSET=UTF8;
+
+CREATE TABLE IF NOT EXISTS views (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	view VARCHAR(50) NOT NULL,
+	UNIQUE INDEX (view)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS customers (
@@ -92,7 +98,8 @@ CREATE TABLE IF NOT EXISTS booking_services (
 
 ALTER TABLE rooms
 	ADD CONSTRAINT FOREIGN KEY (bed_type_id) REFERENCES bed_types(id),
-	ADD CONSTRAINT FOREIGN KEY (bathroom_type_id) REFERENCES bathroom_types(id);
+	ADD CONSTRAINT FOREIGN KEY (bathroom_type_id) REFERENCES bathroom_types(id),
+	ADD CONSTRAINT FOREIGN KEY (view_id) REFERENCES views(id);
 
 ALTER TABLE bookings
 	ADD CONSTRAINT FOREIGN KEY (customer_id) REFERENCES customers(id),
