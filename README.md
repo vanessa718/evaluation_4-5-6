@@ -36,7 +36,7 @@ Compétences concernées :
 	- L'unicité des noms des chambres
 	- La disponibilité des services par chambre
 
-## Resources
+## Ressources
 - La base de données est fournie (voire repository)
 - L'utilisation de Bootstrap est autorisé
 - Le framework backend est Laravel
