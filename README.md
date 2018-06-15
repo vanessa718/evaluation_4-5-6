@@ -7,11 +7,18 @@ Compétences concernées :
 ## Objectifs
 - Créer l'application avec les pages suivantes:
 	- une page « liste des chambres »
-	Afficher le nom de chaque chambre, ainsi que l'accessibilité pour PMR
-  Chaque élément de la liste est cliquable et ouvre la page « chambre »
+	Afficher le nom de chaque chambre, suite ou standard, le prix, ainsi que
+	l'accessibilité PMR. Chaque élément de la liste est cliquable et ouvre la
+	page « chambre »
 	- une page « chambre » qui affiche tous les détails de la chambre et
 	qui contient un bouton « réservation »
-	- une page « réservation » qui permet de saisir une nouvelle réservation
+	- une page « réservation » qui permet de saisir une nouvelle réservation.
+	Cette page montre le nom de la chambre et un formulaire de saisie avec
+	les éléments suivants :
+		- un calendrier « Arrival date »
+		- un calendrier « Departure date »
+		- un select « Customer »
+		- un select « Status »
 - Installer la base de données
 - Créer les composants d'accès aux données
 - Créer les pages selon les maquettes
@@ -29,3 +36,8 @@ Compétences concernées :
 - Le code doit être documenté en anglais
 - Le code doit être formatté suivant les règles du PSR-2
 
+## Liens utiles
+- [Bootstrap](https://getbootstrap.com/)
+- [PSR-2](https://www.php-fig.org/psr/psr-2/)
+- [Laravel](https://laravel.com/)
+- [MySQL](https://www.mysql.com/)
