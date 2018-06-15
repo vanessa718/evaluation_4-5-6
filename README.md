@@ -7,7 +7,7 @@ Compétences concernées :
 ## Objectifs
 - Créer l'application avec les pages suivantes:
 	- une page « liste des chambres »
-	Pour chaque chambre, la liste doit montrer :
+	Pour chaque chambre, la liste doit afficher :
 		- le nom de la chambre
 		- le type de chambre : « suite » ou « standard »
 		- le prix par nuit
