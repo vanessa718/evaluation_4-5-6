@@ -11,9 +11,9 @@ CREATE TABLE IF NOT EXISTS rooms (
 	area INT UNSIGNED NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (name),
-	INDEX (bed_type_id),
-	INDEX (bathroom_type_id)
+	UNIQUE INDEX rooms_name_index(name),
+	INDEX rooms_bed_type_id_index(bed_type_id),
+	INDEX rooms_bathroom_type_id_index(bathroom_type_id)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS bed_types (
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS bed_types (
 	bed_type VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (bed_type)
+	UNIQUE INDEX bed_types_bed_type_index(bed_type)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS bathroom_types (
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS bathroom_types (
 	bathroom_type VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (bathroom_type)
+	UNIQUE INDEX bathroom_types_bathroom_type_index(bathroom_type)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS views (
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS views (
 	view VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (view)
+	UNIQUE INDEX views_view_index(view)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS customers (
@@ -50,9 +50,9 @@ CREATE TABLE IF NOT EXISTS customers (
 	secret VARCHAR(100) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	INDEX (first_name),
-	INDEX (last_name),
-	UNIQUE INDEX (email)
+	INDEX customers_first_name_index(first_name),
+	INDEX customers_last_name_index(last_name),
+	UNIQUE INDEX customers_email_index(email)
 ) Engine=InnoDB CHARSET=UTF8;
 
 -- Each booking references a customer and a room.
@@ -66,9 +66,9 @@ CREATE TABLE IF NOT EXISTS bookings (
 	departure_date DATE NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	INDEX (customer_id),
-	INDEX (room_id),
-	INDEX (booking_status_id)
+	INDEX bookings_custoner_id_index(customer_id),
+	INDEX bookings_room_id_index(room_id),
+	INDEX bookings_booking_status_index(booking_status_id)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS booking_statuses (
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS booking_statuses (
 	booking_status VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (booking_status)
+	UNIQUE INDEX booking_statuses_booking_status_index(booking_status)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS services (
@@ -85,8 +85,8 @@ CREATE TABLE IF NOT EXISTS services (
 	service_category_id INT UNSIGNED NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (name),
-	INDEX (service_category_id)
+	UNIQUE INDEX services_name_index(name),
+	INDEX services_service_category_id_index(service_category_id)
 ) Engine=InnoDB CHARSET=UTF8;
 
 CREATE TABLE IF NOT EXISTS service_categories (
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS service_categories (
 	name VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE INDEX (name)
+	UNIQUE INDEX service_categories_name_index(name)
 ) Engine=InnoDB CHARSET=UTF8;
 
 -- List the services that are availble for each room
@@ -114,8 +114,8 @@ CREATE TABLE IF NOT EXISTS booking_services (
 	quantity INT UNSIGNED NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	INDEX (service_id),
-	INDEX (booking_id)
+	INDEX booking_services_service_id_index(service_id),
+	INDEX booking_services_booking_id_index(booking_id)
 ) Engine=InnoDB CHARSET=UTF8;
 
 
