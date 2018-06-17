@@ -55,3 +55,4 @@ Le code complet pour l'application dans un repository sur GitHub, GitLab ou Bitb
 - [PSR-2](https://www.php-fig.org/psr/psr-2/)
 - [Laravel](https://laravel.com/)
 - [MySQL](https://www.mysql.com/)
+- [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
