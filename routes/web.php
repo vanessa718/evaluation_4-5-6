@@ -18,3 +18,9 @@ Route::get('/', function () {
 
 
 Route::resource('room', 'RoomController');
+
+Route::resource('booking', 'BookingController');
+
+// Route::post('/reservation', function () {
+//     return 'Votre email est ' . request('email');
+// });

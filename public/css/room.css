@@ -61,7 +61,7 @@ body {
 .btnPersonList {
 	margin-top: 0.7em;
 }
-.person {
+.room {
 	margin-top: 2em;
 }
 
@@ -130,113 +130,6 @@ nav p {
 	text-align: center;
 }
 
-/*    checkbox     */
-/*******************/
-/* Customize the label (the container) */
-.container {
-  display: block;
-  position: relative;
-  padding-left: 1em;
-  margin-bottom: 1.2em;
-  cursor: pointer;
-  font-size: 1.1em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-	position: absolute;
-	top: 0;
-	left: 0.5em;
-	height: 1.1em;
-	width: 1.1em;
-	background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-	background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
- 	background-color: #333;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-	display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-	left: 0.3em;
-	top: -0.1em;
-	width: 0.35em;
-	height: 0.8em;
-	border: solid white;
-	border-width: 0 3px 3px 0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-/*    card           */
-/*********************/
-article {flex: 1;}
-.card {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: flex-start;
-}
-.cards {	
-	width: 20%;
-	min-width: 200px; 
-	margin: 0.5rem 0.5rem; 
-	background-color: pink;
-	box-shadow: 0px 5px 20px #999; 
-	border-radius: 2%;
-	 background: linear-gradient(#dedede, white);
-}
-.card a { /*5*/
-	color: #333; 
-  /*text-decoration: none;*/
-}
-.card-image {
-	border-radius: 3% 0 0 0;
-	height: 7em;
-	position: relative;
-
- /* overflow: hidden;/*3*/
-}
-.cards h3 {
-	margin: 0;
-	padding: 0;
-}
-.card-image img {
-	width: 150%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-}
 
 
 /*===============*/
@@ -260,11 +153,15 @@ article {flex: 1;}
 /*===============*/
 /*  focus_room  */
 /*===============*/
-
+.img_focus {
+	margin-top: 1em;
+}
 .name {
 	font-size: 2em;
 }	
-
+.name p {
+	margin: auto;
+}
 .name::after{
 	content: ' ';
 	margin: 10px auto;
@@ -273,6 +170,15 @@ article {flex: 1;}
 	align-items: center; 
 	border: 1px solid #aaa;
 	width: 80px;
+}
+/*===============*/
+/*  focus_room  */
+/*===============*/
+.form_reservation {
+	margin: 3em;
+}
+.focus {
+	font-weight: bold;
 }
 
 /*===================*/
