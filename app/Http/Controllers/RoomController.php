@@ -15,7 +15,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms=\App\Room::all();
-        return view ('room_list',compact('rooms'));
+        return view('room_list',compact('rooms'));
     }
 
     /**

@@ -20,8 +20,7 @@
 		<input type="date" class="date" id="cat-name" name="cat-name" type="text" required>
 	
 	</div>	
-		<label class="form-label" for="cat-name">Nom de la catégorie <abbr title="champ obligatoire">*</abbr></label>
-		<input class="form-field" id="cat-name" name="cat-name" type="text" required>
+		
 	<div class="form_reservation">	
 		<label class="form-label" for="cat-color">Type de lit <abbr title="champ obligatoire">*</abbr></label>
 		<select class="form-field" id="cat-color" name="cat-color" required>

@@ -180,6 +180,11 @@ nav p {
 .focus {
 	font-weight: bold;
 }
+.btn_focus {
+	margin: 3em;
+	text-align: center;
+	
+}
 
 /*===================*/
 /*      FOOTER       */
