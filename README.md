@@ -27,7 +27,7 @@ Compétences concernées :
 		- un select « Customer »
 		- un select « Status »
 		- un bouton « Submit »
-- **_Installer la base de données_** (tables et données)
+- **_Installer la base de données_** (tables et données).
 	Pas de migrations à faire, installation directe en MySQL depuis les fichiers .sql.
 - **_Créer les composants d'accès aux données_**
 - **_Créer les pages (views) selon les maquettes_**
