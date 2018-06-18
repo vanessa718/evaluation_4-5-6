@@ -1,0 +1,403 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	/*display: flex;*/
+	/*flex-direction: column;*/
+}
+body {
+  	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+
+/*===================*/
+/*      HEADER       */
+/*===================*/
+.header {
+	display: flex;
+	background: #edeeef;
+	justify-content: center;
+
+}
+
+	
+.logo {
+	margin: 0.5em;
+	align-self: baseline;
+	height: 9em;
+	width: 14em;
+	border-radius: 50%;
+	
+}
+.title {
+	font-family: 'Bad Script', cursive;
+	margin-left: 0.5em;
+	margin-top: 1.3em;
+
+}
+
+.table {
+	flex-wrap: wrap;
+}
+/*===============*/
+/*     HEADER    */
+/*===============*/
+.personList {
+	background: #636363;
+	color: #ffffff;
+	padding: 0.5em;
+	display: inline-block;
+	width: 100%;
+	font-size: 1.2em;
+	min-height: 4em;
+}
+.list_person {
+	margin-top: 0.2em;
+
+}
+.btnPersonList {
+	margin-top: 0.7em;
+}
+.person {
+	margin-top: 2em;
+}
+
+
+/*===================*/
+/*        MAIN       */
+/*===================*/
+
+/*       menu        */
+/*********************/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: static;
+}
+
+.topnav a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #8bbbd6;
+  color: #fff;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*     sidebar      */
+/********************/
+.wrapper {
+	
+    /* occupe la hauteur restante */
+    flex: 1 1 auto;
+
+    /* crée un contexte flex pour ses enfants */
+    display: flex;
+}
+nav {
+	display: flex;
+	flex-direction: column;
+	background: #bcd1e5;
+	order: -1;
+	width: 12em;
+	/*flex-basis: auto;*/
+	flex-direction: column;
+}
+nav p {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+.sidebar {
+	/* view in first */
+	order: -1;
+	text-align: center;
+}
+
+/*    checkbox     */
+/*******************/
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 1.2em;
+  cursor: pointer;
+  font-size: 1.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0.5em;
+	height: 1.1em;
+	width: 1.1em;
+	background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ 	background-color: #333;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+	left: 0.3em;
+	top: -0.1em;
+	width: 0.35em;
+	height: 0.8em;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+/*    card           */
+/*********************/
+article {flex: 1;}
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+}
+.cards {	
+	width: 20%;
+	min-width: 200px; 
+	margin: 0.5rem 0.5rem; 
+	background-color: pink;
+	box-shadow: 0px 5px 20px #999; 
+	border-radius: 2%;
+	 background: linear-gradient(#dedede, white);
+}
+.card a { /*5*/
+	color: #333; 
+  /*text-decoration: none;*/
+}
+.card-image {
+	border-radius: 3% 0 0 0;
+	height: 7em;
+	position: relative;
+
+ /* overflow: hidden;/*3*/
+}
+.cards h3 {
+	margin: 0;
+	padding: 0;
+}
+.card-image img {
+	width: 150%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+
+/*===============*/
+/*  room_list  */
+/*===============*/
+.btn-view {
+	min-width: 5em;
+	min-height: 2em;
+}
+.cell {
+	background-color: #EFEFEF; 
+	
+}
+.space {
+	margin: 10em;
+	background: #ffffff;
+}
+.table tr {
+	border-top: 1rem solid #ffffff;
+}
+/*===============*/
+/*  focus_room  */
+/*===============*/
+
+.name {
+	font-size: 2em;
+}	
+
+.name::after{
+	content: ' ';
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	border: 1px solid #aaa;
+	width: 80px;
+}
+
+/*===================*/
+/*      FOOTER       */
+/*===================*/
+footer {
+  bottom: 0px;
+  border-top: 1px solid #000;
+  text-align: center;
+  width: 100%;
+  font-size: 90%;
+
+}
+
+.topNav {
+  overflow: hidden;
+  background-color: #333;
+ 
+}
+
+.topNav a  {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.topNav p {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  padding: 5px 6px;
+}
+
+.topNav a:hover {
+  color: #8bbbd6;
+}
+
+.activeFooter {
+  color: #8bbbd6;
+}
+
+.Copyright a {
+	font-size: 0.8em;
+}
+
+/*===================*/
+/*   MEDIA QUERIES   */
+/*===================*/
+/* responsive menu  */
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topNav a:not(:first-child) {display: none;}
+  .topNav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: inline-block;
+    display: block;
+    text-align: left;
+  }
+
+  .topNav.responsive {position: relative;}
+  .topNav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topNav.responsive  {
+    display: inline-block;
+    display: block;
+    text-align: left;
+  }
+  .topNav p {
+		font-size: 70%;
+  }
+}
+/* nav */
+@media screen and (max-width: 700px){
+	.wrapper{
+		flex-direction: column;
+	}
+	nav {
+		width: auto;
+	}
+	nav,
+	article {
+		flex-basis: auto;
+		justify-content: center;
+	}
+	nav {
+		order: 0;
+	}
+	
+  
+}
+
+
+
+@media screen and (max-width: 320px) {
+  .Logo,
+  .Title {
+  	flex-basis: auto;
+  	justify-content: center;
+  	/*flex-direction: column;*/
+  }
+	.card {
+		flex-direction: column;
+	}
+
+}
