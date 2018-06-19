@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
 
 
-<form action="/booking" class="form" method="post">
+<form action="/booking" class="form" method="post" action="{{ url('/auth/register') }}">
 	{{ csrf_field() }}
 		<div class="form-row">
     		<div class="form-group col-md-6">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
     <h1>Nos clients</h1>
 
