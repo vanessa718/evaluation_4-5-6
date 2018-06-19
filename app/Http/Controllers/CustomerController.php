@@ -1,11 +1,7 @@
 <?php
-
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-class RoomController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +10,9 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms=\App\Room::all();
-        return view('room_list',compact('rooms'));
+        $customers=\App\Customer::paginate(15);
+        return view('customer',compact('customers'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +22,6 @@ class RoomController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,7 +32,6 @@ class RoomController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -47,10 +40,8 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-          $room = \App\Room::with('bed_type','bathroom_type','view')->find($id);
-        return view('focus_room', compact('room', 'bed_types','bathroom_types','views'));
+        //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -61,7 +52,6 @@ class RoomController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -73,7 +63,6 @@ class RoomController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

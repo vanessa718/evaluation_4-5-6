@@ -15,12 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Auth::routes();
 
 Route::resource('room', 'RoomController');
 
-Route::resource('booking', 'BookingController');
+Route::resource('bookings', 'BookingController');
 
-// Route::post('/reservation', function () {
-//     return 'Votre email est ' . request('email');
-// });
+Route::resource('customer', 'CustomerController');
+
+Route::post('/booking', function () {
+    return 'votre réservation est bien enregistrée';
+});
+

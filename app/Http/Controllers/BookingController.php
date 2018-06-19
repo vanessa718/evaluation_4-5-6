@@ -4,9 +4,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Room;
+use App\Booking;
 
-class RoomController extends Controller
+class BookingController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +17,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms=\App\Room::all();
-        return view('room_list',compact('rooms'));
+        $booking=\App\Booking::all();
+        return view ('booking',compact('booking'));
     }
 
     /**
@@ -47,8 +50,8 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-          $room = \App\Room::with('bed_type','bathroom_type','view')->find($id);
-        return view('focus_room', compact('room', 'bed_types','bathroom_types','views'));
+        $bookings = \App\Booking::with('arrival_date','departure_date','booking_status','room_id')->find($id);
+        return view('booking', compact('bookings', 'arrival_dates','departure_dates','booking_statuses','room_id'));
     }
 
     /**

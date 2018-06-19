@@ -52,7 +52,7 @@
 	  		</div>
 	  	</div>
 	  	
-	  	<a href="{{action('BookingController@index', $room['id'])}}" class="btn btn-secondary btn-lg active btn_focus" role="button" aria-pressed="true">Réservation</a>
+	  	<a href="{{action('BookingController@show', $room['name'])}}" class="btn btn-secondary btn-lg active btn_focus" role="button" aria-pressed="true">Réservation</a>
 	  	
 
 	</div>

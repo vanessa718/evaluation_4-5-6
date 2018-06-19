@@ -8,7 +8,7 @@
 		</div>
 	</div>	
 	<div class="topnav" id="myTopnav">
-		  <a href="#home" class="active">Home</a>
+		  <a href="/room" class="active">Home</a>
 		  <a href="#">onglet </a>
 		  <a href="#">onglet </a>
 		  <a href="#">onglet </a>

@@ -14,3 +14,4 @@ function myFooter() {
         x.className = "topNav";
     }
 }
+
