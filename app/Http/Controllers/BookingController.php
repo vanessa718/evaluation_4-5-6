@@ -30,7 +30,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return view('booking');
     }
 
     /**
@@ -41,7 +41,9 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $booking = $request->input('inputLastName4');
+        $booking = $request->input('inputFirstName4');
     }
 
     /**
